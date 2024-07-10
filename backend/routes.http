@@ -1,0 +1,17 @@
+@baseUrl = http://localhost:3333
+
+# @name create_trip
+POST {{baseUrl}}/trips
+Content-Type: application/json
+
+{
+  "destination": "Florianópolis",
+  "starts_at": "2024-07-30 18:00:00",
+  "ends_at": "2024-08-31 18:00:00",
+  "owner_name": "Pedro Jorge",
+  "owner_email": "pedrojorge2011@gmail.com",
+  "emails_to_invite": [
+    "pedrojorge2011@gmail.com",
+    "johndoe@example.com"
+  ]
+}
