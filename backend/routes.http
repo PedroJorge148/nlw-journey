@@ -1,5 +1,10 @@
 @baseUrl = http://localhost:3333
 
+# @name get_trip_details
+GET {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247
+
+###
+
 # @name create_trip
 POST {{baseUrl}}/trips
 Content-Type: application/json
@@ -11,7 +16,84 @@ Content-Type: application/json
   "owner_name": "Pedro Jorge",
   "owner_email": "pedrojorge2011@gmail.com",
   "emails_to_invite": [
-    "pedrojorge2011@gmail.com",
     "johndoe@example.com"
   ]
 }
+
+###
+
+# @name update_trip
+PUT {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247
+Content-Type: application/json
+
+{
+  "destination": "Florianópolis, Brasil",
+  "starts_at": "2024-07-30 18:00:00",
+  "ends_at": "2024-08-31 18:00:00"
+}
+
+###
+
+# @name confirm_trip
+GET {{baseUrl}}/trips/abe37cb5-0639-4ed7-b2fe-d1ab3d310f0c/confirm
+Content-Type: application/json
+
+###
+
+# @name confirm_participants
+GET {{baseUrl}}/participants/5089c7df-94a9-4806-af46-fdd1f32811b4/confirm
+Content-Type: application/json
+
+###
+
+# @name create_invite
+POST {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247/invites
+Content-Type: application/json
+
+{
+  "email": "johndoe@example.com"
+}
+
+###
+
+# @name get_participants
+GET {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247/participants
+
+###
+
+
+# @name get_participant
+GET {{baseUrl}}/participants/a27b0ac8-5f65-4629-8175-a27e8ae84f05
+
+###
+
+
+# @name create_activity
+POST {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247/activities
+Content-Type: application/json
+
+{
+  "title": "Almoço",
+  "occurs_at": "2024-08-11 12:00:00"
+}
+
+###
+
+# @name get_activities
+GET {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247/activities
+
+###
+
+# @name create_link
+POST {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247/links
+Content-Type: application/json
+
+{
+  "title": "Academia",
+  "url": "https://url.com"
+}
+
+###
+
+# @name get_links
+GET {{baseUrl}}/trips/2d1f7304-7ccf-4da1-ac01-7a76f2c99247/links
